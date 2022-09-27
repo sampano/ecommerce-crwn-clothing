@@ -23,8 +23,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup(); //desctructure off response
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup(); //desctructure off response
   };
 
   const handleSumbmit = async (event) => {
