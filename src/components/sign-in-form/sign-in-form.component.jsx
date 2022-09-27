@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import FormInput from "../form-input/form-input.component";
 import {
   signInWithGooglePopup,
@@ -31,8 +31,8 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserEmailAndPassword(email, password);
-      console.log(response);
+      const { user } = await signInAuthUserEmailAndPassword(email, password);
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
